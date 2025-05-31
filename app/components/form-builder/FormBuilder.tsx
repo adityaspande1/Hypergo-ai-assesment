@@ -235,13 +235,13 @@ export default function FormBuilder() {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="bg-white dark:bg-gray-800 p-6 border-b dark:border-gray-700">
+      <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 border-b dark:border-gray-700">
         <input
           type="text"
           value={formTitle}
           onChange={(e) => setFormTitle(e.target.value)}
           placeholder="Form Title"
-          className="text-2xl font-bold w-full border-none focus:outline-none focus:ring-0 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          className="text-xl sm:text-2xl font-bold w-full border-none focus:outline-none focus:ring-0 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
         />
         <textarea
           value={formDescription}
@@ -252,14 +252,14 @@ export default function FormBuilder() {
         />
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         {/* Form Builder Panel */}
-        <div className="w-2/3 p-6 overflow-y-auto bg-white dark:bg-gray-800 border-r dark:border-gray-700">
+        <div className="w-full md:w-2/3 p-4 sm:p-6 overflow-y-auto bg-white dark:bg-gray-800 border-b md:border-b-0 md:border-r dark:border-gray-700">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Form Fields</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Form Fields</h2>
             <button
               onClick={handleAddField}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Add Field
             </button>
@@ -316,7 +316,7 @@ export default function FormBuilder() {
         </div>
 
         {/* Field Editor Sidebar */}
-        <div className="w-1/3 border-l dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-6 overflow-y-auto">
+        <div className="w-full md:w-1/3 border-t md:border-t-0 md:border-l dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 overflow-y-auto">
           {showFieldEditor ? (
             <FieldEditor
               field={editingField}

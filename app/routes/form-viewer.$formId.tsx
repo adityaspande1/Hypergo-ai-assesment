@@ -7,8 +7,8 @@ export default function FormViewerPage() {
 
   if (!formId) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-        <div className="text-center bg-white dark:bg-gray-800 p-8 rounded-lg shadow">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="text-center bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow w-full max-w-md">
           <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Form Not Found</h2>
           <p className="mt-2 text-gray-500 dark:text-gray-400">The form you're looking for doesn't exist.</p>
         </div>
@@ -18,7 +18,7 @@ export default function FormViewerPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto py-8 px-4">
+      <div className="max-w-4xl mx-auto py-4 sm:py-8 px-4">
         <div className="flex justify-end mb-4">
           <ThemeToggle />
         </div>

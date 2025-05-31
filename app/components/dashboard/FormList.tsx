@@ -139,19 +139,19 @@ export default function FormList() {
   };
   
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Your Forms</h1>
+    <div className="container mx-auto px-4 py-4 sm:py-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4 sm:gap-0">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Your Forms</h1>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full sm:w-auto"
         >
           Create Form
         </button>
       </div>
       
       {Object.keys(forms).length === 0 ? (
-        <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <div className="text-center py-8 sm:py-12 bg-white dark:bg-gray-800 rounded-lg shadow">
           <svg
             className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500"
             fill="none"
@@ -188,35 +188,35 @@ export default function FormList() {
                   className="block hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
                   <div className="px-4 py-4 sm:px-6">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
                       <div className="flex-1 min-w-0">
                         <p className="text-lg font-medium text-blue-600 dark:text-blue-400 truncate">{form.title}</p>
                         <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 truncate">{form.description}</p>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 mt-2 sm:mt-0">
                         <Link
                           to={`/form-viewer/${form.id}`}
-                          className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                          className="inline-flex items-center justify-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex-1 sm:flex-none"
                           onClick={(e) => e.stopPropagation()}
                         >
                           Preview
                         </Link>
                         <button
                           onClick={(e) => handleDeleteForm(e, form.id)}
-                          className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100 dark:bg-red-900 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                          className="inline-flex items-center justify-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100 dark:bg-red-900 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 flex-1 sm:flex-none"
                         >
                           Delete
                         </button>
                       </div>
                     </div>
-                    <div className="mt-2 sm:flex sm:justify-between">
-                      <div className="sm:flex">
+                    <div className="mt-2 flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-0">
+                      <div className="flex">
                         <p className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                           <span className="mr-1.5">Fields:</span>
                           {form.fields.length}
                         </p>
                       </div>
-                      <div className="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                         <p>
                           Last updated: {formatDate(form.updatedAt)}
                         </p>

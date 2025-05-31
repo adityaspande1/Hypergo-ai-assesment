@@ -20,5 +20,7 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
+  
   ],
 });
+

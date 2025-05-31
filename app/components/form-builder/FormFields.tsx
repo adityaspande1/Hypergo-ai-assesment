@@ -127,7 +127,7 @@ export function FormField({ field, isPreview = false, onEdit, onDelete }: FormFi
   };
 
   return (
-    <div className={`mb-4 p-4 ${isPreview ? '' : 'border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800'}`}>
+    <div className={`mb-4 p-3 sm:p-4 ${isPreview ? '' : 'border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800'}`}>
       <div className="flex justify-between items-start mb-2">
         <div>
           <label htmlFor={field.id} className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -139,7 +139,7 @@ export function FormField({ field, isPreview = false, onEdit, onDelete }: FormFi
         </div>
         
         {!isPreview && (
-          <div className="flex space-x-2">
+          <div className="flex space-x-1 sm:space-x-2">
             <button
               type="button"
               onClick={(e) => {
@@ -147,7 +147,7 @@ export function FormField({ field, isPreview = false, onEdit, onDelete }: FormFi
                 console.log('Edit button direct click');
                 if (onEdit) onEdit(field);
               }}
-              className="px-3 py-1 rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
+              className="px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
             >
               Edit
             </button>
@@ -158,7 +158,7 @@ export function FormField({ field, isPreview = false, onEdit, onDelete }: FormFi
                 console.log('Delete button direct click');
                 if (onDelete) onDelete(field.id);
               }}
-              className="px-3 py-1 rounded-md bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 font-medium"
+              className="px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-md bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 font-medium"
             >
               Delete
             </button>
@@ -174,12 +174,12 @@ export function FormField({ field, isPreview = false, onEdit, onDelete }: FormFi
 export function DraggableFormField({ field, isPreview = false, onEdit, onDelete }: FormFieldProps) {
   return (
     <div className="relative">
-      <div className="cursor-move absolute left-0 top-0 bottom-0 flex items-center px-2 text-gray-400 dark:text-gray-500">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="cursor-move absolute left-0 top-0 bottom-0 flex items-center px-1 sm:px-2 text-gray-400 dark:text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
         </svg>
       </div>
-      <div className="pl-8">
+      <div className="pl-6 sm:pl-8">
         <FormField 
           field={field} 
           isPreview={isPreview} 
